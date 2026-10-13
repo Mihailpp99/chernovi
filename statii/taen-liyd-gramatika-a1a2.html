@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Защо на едни английската граматика „просто им идва“, а други я зубрят с години | Lexify</title>
+<style>
+:root {
+  /* Една колона като статия в блога на Lexify: текст до ~70 знака, хартия и тънки линии, оранжевото е само за действие и знак. */
+  --paper: #ffffff;
+  --paper-soft: #f9fafb;
+  --ink: #1f2937;
+  --text-soft: #4b5563;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --line-strong: #d1d5db;
+  --accent: #ff9900;
+  --accent-hover: #e68900;
+  --accent-ink: #b45309;
+  --accent-soft: #fff5e6;
+  --accent-line: #ffd699;
+  --on-ink: #ffffff;
+  --on-ink-muted: #c3ccda;
+  --warn-ink: #b91c1c;
+  --warn-soft: #fef2f2;
+  --shadow-1: 0 1px 2px rgba(28, 48, 80, 0.06);
+  --shadow-2: 0 8px 24px rgba(28, 48, 80, 0.08);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
+  --measure: 40rem;
+  color-scheme: light;
+}
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 1.125rem; line-height: 1.75; font-kerning: normal; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; padding: 0.625rem 20px; background: var(--ink); color: var(--on-ink); font-size: 0.8125rem; line-height: 1.5; }
+.bar p { margin: 0; min-width: 0; }
+.bar b { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-right: 0.5rem; }
+.bar span { color: var(--on-ink-muted); }
+.bar button { font: inherit; font-weight: 600; color: var(--on-ink); background: transparent; border: 1px solid var(--on-ink-muted); border-radius: 999px; padding: 0.375rem 0.875rem; min-height: 36px; cursor: pointer; }
+.bar button[aria-pressed="true"] { background: var(--on-ink); color: var(--ink); border-color: var(--on-ink); }
+.page { padding-inline: 20px; padding-block: clamp(2rem, 6vw, 3.5rem) 3rem; }
+.article, .foot { max-width: var(--measure); margin-inline: auto; }
+.eyebrow { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin: 0 0 1rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.article h1 { margin: 0 0 1.25rem; font-size: clamp(1.875rem, 1.2rem + 2.7vw, 2.75rem); line-height: 1.16; letter-spacing: -0.02em; font-weight: 800; text-wrap: balance; }
+.article h2 { margin: 3.25rem 0 1rem; font-size: clamp(1.5rem, 1.2rem + 1.1vw, 1.875rem); line-height: 1.22; letter-spacing: -0.015em; font-weight: 800; text-wrap: balance; }
+.article h3 { margin: 2.25rem 0 0.75rem; font-size: 1.25rem; line-height: 1.3; font-weight: 700; text-wrap: balance; }
+.article p { margin: 0 0 1.25em; }
+.article strong { font-weight: 700; }
+.article a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+.article a:hover { text-decoration-thickness: 2px; }
+.article .note { font-size: 0.9375rem; line-height: 1.6; color: var(--muted); }
+.article .deck { margin-bottom: 2rem; font-size: 1.25rem; line-height: 1.55; font-weight: 600; }
+.article ul, .article ol { margin: 0 0 1.5rem; padding-left: 1.25rem; }
+.article li { margin-bottom: 0.375rem; }
+.article li::marker { color: var(--accent-ink); }
+.article ul.timeline { list-style: none; margin: 1.75rem 0 2rem; padding: 0 0 0 1.25rem; border-left: 2px solid var(--line); }
+.timeline li { position: relative; margin: 0; padding-bottom: 1.125rem; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; left: calc(-1.25rem - 6px); top: 0.55em; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--paper); }
+.timeline li > strong:first-child { display: block; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); font-variant-numeric: tabular-nums; line-height: 1.5; }
+.article .tip { margin: 1.5rem 0 1.75rem; padding: 1rem 1.25rem; background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 16px; font-size: 1.0625rem; line-height: 1.65; }
+.tip-label { display: block; margin-bottom: 0.25rem; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
+.article blockquote { margin: 2rem 0; padding-left: 1.25rem; border-left: 3px solid var(--accent); color: var(--text-soft); }
+.reviews { display: grid; gap: 1rem; margin: 1.75rem 0 2.25rem; }
+@media (min-width: 768px) { .reviews { grid-template-columns: 1fr 1fr; } .reviews > :first-child { grid-column: 1 / -1; } }
+.review { display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; min-width: 0; margin: 0; padding: 1.125rem 1.25rem; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-1); }
+.article .review blockquote { margin: 0; padding: 0; border: 0; color: var(--ink); font-size: 1.0625rem; line-height: 1.6; }
+.review blockquote p { margin: 0; }
+.review figcaption { font-size: 0.875rem; color: var(--muted); }
+.review figcaption em { font-style: normal; }
+.article .cta { margin: 2rem 0 2.25rem; }
+.cta .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0.875rem 1.75rem; border-radius: 999px; background: var(--accent); color: var(--ink); font-size: 1.0625rem; font-weight: 700; line-height: 1.3; text-align: center; text-decoration: none; box-shadow: var(--shadow-1); transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, background-color 0.2s; }
+.cta .button:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: var(--shadow-2); }
+.cta .button:active { transform: scale(0.98); }
+@media (max-width: 480px) { .cta .button { display: flex; width: 100%; box-sizing: border-box; } }
+.article .ps { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.ps > strong:first-child { color: var(--accent-ink); }
+.article hr { margin: 2.5rem 0; border: 0; border-top: 1px solid var(--line); }
+.table { margin: 0 0 1.5rem; overflow-x: auto; }
+.table table { border-collapse: collapse; font-size: 1rem; }
+.table th, .table td { padding: 0.5rem 0.75rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.sources { margin: -0.25rem 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--text-soft); }
+.sources summary { cursor: pointer; font-weight: 600; color: var(--accent-ink); min-height: 44px; display: flex; align-items: center; }
+.article .sources ul { margin-top: 0.75rem; padding-left: 1.125rem; }
+.sources li { margin-bottom: 0.5rem; overflow-wrap: anywhere; }
+.ph { margin: 2rem 0 2.25rem; }
+.ph-box { box-sizing: border-box; display: grid; place-content: center; justify-items: center; gap: 0.5rem; aspect-ratio: var(--ar, 3 / 2); max-width: 100%; padding: 1.25rem; border: 2px dashed var(--line-strong); border-radius: 16px; background: var(--paper-soft); text-align: center; }
+.ph-icon { width: 40px; height: 40px; color: var(--line-strong); }
+.ph-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink); }
+.ph-what { max-width: 30rem; font-size: 1rem; line-height: 1.5; color: var(--ink); }
+.ph-size { font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ph-lost { max-width: 30rem; font-size: 0.875rem; font-weight: 600; color: var(--warn-ink); }
+.ph.lost .ph-box { border-color: var(--warn-ink); background: var(--warn-soft); }
+.ph.has-img img { display: block; width: 100%; height: auto; aspect-ratio: var(--ar, 3 / 2); object-fit: cover; border-radius: 16px; background: var(--paper-soft); }
+.ph.has-img figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--muted); }
+@media (min-width: 900px) { .ph.wide { margin-inline: -4rem; } }
+.foot { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 0.8125rem; line-height: 1.6; color: var(--muted); }
+.foot p { margin: 0; }
+:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 3px; border-radius: 4px; }
+.ids [data-md], .ids [data-snimka] { position: relative; }
+.ids [data-md]::before, .ids [data-snimka]::before { display: block; margin-bottom: 0.25rem; font: 600 0.6875rem/1.4 var(--font-mono); letter-spacing: 0.02em; color: var(--accent-ink); text-transform: none; }
+.ids [data-md]::before { content: attr(data-md) " · ред " attr(data-line); }
+.ids [data-snimka]::before { content: "снимка · " attr(data-snimka); }
+@media (min-width: 1180px) {
+  .ids .article > [data-md]::before, .ids .article > [data-snimka]::before { position: absolute; right: calc(100% + 1.25rem); top: 0.45rem; width: 9rem; margin: 0; text-align: right; white-space: nowrap; }
+  .ids .article > .ph.wide::before { right: calc(100% + 1.25rem); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="bar"><p><b>Чернова</b><span>за преглед · текстът е от statii/taen-liyd-gramatika-a1a2.md в редактора · снимките са празни карета</span></p><button type="button" id="nomera" aria-pressed="false">Покажи номерата</button></div>
+<main class="page">
+<article class="article">
+<p class="eyebrow"><span>Lexify · блог</span><span>≈ 8 мин четене</span></p>
+<h1 data-md="zaglavie" data-line="1">Защо на едни английската граматика „просто им идва“, а други я зубрят с години</h1>
+<p class="note" data-md="s0-p1" data-line="7">Статия от екипа на Lexify. В нея разказваме и за наша книга.</p>
+<p class="deck" data-md="s0-p2" data-line="9">Не е талант и не е повече учене. Отговорът е известен на изследователите от десетилетия, но рядко стига до училището и до бюрото у дома.</p>
+<figure class="ph wide" data-snimka="glavna" style="--ar: 3 / 2" aria-label="Място за снимка 1">
+<div class="ph-box"><svg class="ph-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.75"/><path d="m21 16-4.5-4.5L8 19.5"/></svg><span class="ph-label">Снимка 1 · водеща</span><span class="ph-what">Истинска снимка: разтворената книга на бюро или широк бял лист с цветна схема. Тя е и картинката на рекламата.</span><span class="ph-size">3:2 · 1536 × 1024</span></div>
+</figure>
+<p data-md="s0-p3" data-line="11">Най-добрите методи за учене не са тайна. Науката ги проучва от времето преди самолета. Просто малцина ги ползват.</p>
+<ul class="timeline" data-md="s0-l1" data-line="13"><li><strong>1880-те.</strong> Херман Ебингхаус пръв измерва как забравяме.</li><li><strong>1971.</strong> Алън Пайвио описва двойното кодиране: дума, свързана с образ, има два пътя за припомняне вместо един.</li><li><strong>70-те.</strong> Джоузеф Новак започва да чертае знанията като концептуални карти: понятия, свързани със стрелки.</li><li><strong>2006.</strong> Едно четене и три опита за припомняне дават след седмица 61% запомнено, а четири четения дават 40%. Същата година обобщение на 317 експеримента потвърждава, че повторенията, разпределени във времето, вършат повече работа от струпаните.</li><li><strong>2013.</strong> Голям преглед на десет техники за учене дава най-високата оценка на упражняването с въпроси и на разпределянето на ученето във времето. Сред най-слабите са препрочитането и подчертаването.</li></ul>
+<p data-md="s0-p4" data-line="19">И все пак в проучване от 2009 г. 84% от 177 студенти посочват препрочитането като начин на учене. Едва 11% се изпитват сами. До училището и до бюрото у дома тези открития почти не стигат.</p>
+<h2 data-md="s1-h" data-line="21">Едни я виждат, други я зубрят</h2>
+<p data-md="s1-p1" data-line="23">С английската граматика пропастта се вижда най-ясно. Затова тази статия е за нея. И не е за всеки: ако търсиш още един списък с правила за наизустяване, тук няма да го намериш.</p>
+<p data-md="s1-p2" data-line="25">Случвало ли ти се е да забележиш нещо странно у хората, на които граматиката „просто им идва“? Има ги в училище, има ги и сред възрастните. Не знаят повече правила от другите, а изречението им излиза подредено.</p>
+<p data-md="s1-p3" data-line="27">А някой друг знае правилото за Present Perfect наизуст и пак се запъва насред изречението. Или наизустява, че въпросът в минало време започва с <em>did</em>, а после пише „Did she went?“.</p>
+<p data-md="s1-p4" data-line="29">Може би това си ти. Може би е детето ти, над домашното.</p>
+<p data-md="s1-p5" data-line="31">Първите не са по-умни и обикновено не са учили повече. Те виждат нещо, което на повечето от нас никой не е показал.</p>
+<h2 data-md="s2-h" data-line="33">Това, което виждат, има име</h2>
+<p data-md="s2-p1" data-line="35">Виждат <strong>структурата</strong>: не отделни правила, а как правилата са свързани.</p>
+<p data-md="s2-p2" data-line="37">Когато структурата на материала се направи видима с цвят, рамки, стрелки и подредба, изследователите наричат това сигнализиране. Обобщение от 2020 г. събира 29 такива експеримента с общо 2726 души. Резултатът се подобрява осезаемо, и то <strong>най-много при хората, които знаят най-малко</strong>.</p>
+<p data-md="s2-p3" data-line="39">Схемите не са за напредналите. Помагат най-много на онзи, който тепърва се ориентира.</p>
+<h2 data-md="s3-h" data-line="41">Защо тогава не го виждаш</h2>
+<p data-md="s3-p1" data-line="43">Защото граматиката почти винаги стига до нас като текст. Едно правило на урок, обяснение в абзац, един-два примера, упражнение. Всяко правило поотделно е ясно, но никой не начертава как се свързват.</p>
+<p data-md="s3-p2" data-line="45">Това не е ничия вина. Нито на този, който учи, нито на онзи до него, който се опитва да помогне. Учебникът е направен, за да обясни правилото, а учителят има четирийсет минути и цял клас.</p>
+<p data-md="s3-p3" data-line="47">Така граматиката се учи като списък. А колкото по-дълъг е списъкът, толкова по-лесно правилата се смесват. Оттам идва и вечното бъркане на времената.</p>
+<p data-md="s3-p4" data-line="49">В следващите минути ще видиш трите неща, които превръщат списъка в карта. Но първо една история от нашата работа с ученици.</p>
+<h2 data-md="s4-h" data-line="51">Широките бели листи</h2>
+<p data-md="s4-p1" data-line="53">От години преподаваме английски: на деца, които тепърва учат азбуката, на тийнейджъри преди матура и на възрастни, които започват от нулата или се връщат към езика.</p>
+<p data-md="s4-p2" data-line="55">Две изречения чуваме отново и отново: „Уча, но не разбирам.“ и „Учил съм, но нищо не помня.“</p>
+<p data-md="s4-p3" data-line="57">Идват с изписани тетрадки и подчертани учебници. Старанието го има.</p>
+<p data-md="s4-p4" data-line="59">Виждахме, че им е трудно да учат от учебниците. Информацията е разпръсната, черно-бяла и без ясна система. Така е трудно да се запомни и още по-трудно да се свърже с останалото.</p>
+<p data-md="s4-p5" data-line="61">Затова започнахме да правим собствена система. Работехме върху широки бели листи вместо в учебника, за да е материалът по-чист и ясен.</p>
+<p data-md="s4-p6" data-line="63">С цветове отличавахме различните правила и структури. И постепенно променяхме системата според това кое е лесно и кое е трудно за учениците.</p>
+<p data-md="s4-p7" data-line="65">Тогава видяхме нещо важно. Същото правило, обяснено с три абзаца текст, оставаше неразбрано. Показано като цветна схема, се разбираше за секунди и се помнеше седмици.</p>
+<figure class="ph" data-snimka="pravilo-dva-pati" style="--ar: 3 / 2" aria-label="Място за снимка 2">
+<div class="ph-box"><svg class="ph-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.75"/><path d="m21 16-4.5-4.5L8 19.5"/></svg><span class="ph-label">Снимка 2 · едно правило два пъти</span><span class="ph-what">Едно и също правило два пъти: като абзац текст и като цветната схема от книгата. Истинска страница, не генерирана.</span><span class="ph-size">3:2 · 1536 × 1024</span></div>
+</figure>
+<p data-md="s4-p8" data-line="67">Информацията на листа е същата. Разликата е, че се вижда кое с кое е свързано.</p>
+<h2 data-md="s5-h" data-line="69">Указания срещу карта</h2>
+<p data-md="s5-p1" data-line="71">Представи си, че си в непознат град и имаш само указания: „второто наляво, после направо до аптеката“. Докато всичко върви по план, стигаш. Завиеш ли веднъж погрешно, се губиш, защото не знаеш къде се намираш.</p>
+<p data-md="s5-p2" data-line="73">Така учим граматиката: правило след правило. Който „вижда“ граматиката, има карта. На нея има три неща, които в указанията липсват.</p>
+<h3 data-md="s6-h" data-line="75">1. Пътищата: как се свързват правилата</h3>
+<p data-md="s6-p1" data-line="77">Много времена са построени по един и същ начин. Всички продължителни са <em>be</em> + глагол с <em>-ing</em>: I <strong>am</strong> work<strong>ing</strong>, I <strong>was</strong> work<strong>ing</strong>, I <strong>will be</strong> work<strong>ing</strong>. Всички перфектни са <em>have</em> + третата форма на глагола: I <strong>have</strong> work<strong>ed</strong>, I <strong>had</strong> work<strong>ed</strong>.</p>
+<p data-md="s6-p2" data-line="79">Вместо шест отделни правила, две форми, които се местят във времето.</p>
+<figure class="ph" data-snimka="karta-vremena" style="--ar: 4 / 3" aria-label="Място за снимка 3">
+<div class="ph-box"><svg class="ph-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.75"/><path d="m21 16-4.5-4.5L8 19.5"/></svg><span class="ph-label">Снимка 3 · картата на времената</span><span class="ph-what">Схема на картата на времената: be + -ing и have + трета форма в сегашно, минало и бъдеще, в цветовете на легендата.</span><span class="ph-size">4:3 · 1200 × 900</span></div>
+</figure>
+<p class="tip" data-md="s6-p3" data-line="81"><strong class="tip-label">Как да го приложиш</strong> преди ново правило потърси на кое старо прилича. Минало просто време? Въпросът е като в сегашното, само <em>do / does</em> става <em>did</em>.</p>
+<h3 data-md="s7-h" data-line="83">2. Ориентирите: примерите</h3>
+<p data-md="s7-p1" data-line="85">Едно изречение рядко показва кое е общото. Трябват няколко, и най-добре двойка, която се различава само в едно:</p>
+<ul data-md="s7-l1" data-line="87"><li>I <strong>work</strong> from home. (по принцип)</li><li>I <strong>am working</strong> from home this week. (сега, временно)</li></ul>
+<p data-md="s7-p2" data-line="90">Двете казват за разликата между сегашните времена повече, отколкото половин страница обяснение.</p>
+<p class="tip" data-md="s7-p3" data-line="92"><strong class="tip-label">Как да го приложиш</strong> към всяко правило запиши три истински изречения, от сериал, песен или игра, и една такава двойка.</p>
+<h3 data-md="s8-h" data-line="94">3. Легендата: цветът</h3>
+<p data-md="s8-p1" data-line="96">Картата се чете бързо, защото има легенда: синьото е вода, зеленото е парк. Ако глаголът е винаги в един цвят, а спомагателният глагол в друг, окото само хваща кое къде е. Не търсиш правилото, разпознаваш го.</p>
+<figure class="ph" data-snimka="legenda" style="--ar: 2 / 1" aria-label="Място за снимка 4">
+<div class="ph-box"><svg class="ph-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.75"/><path d="m21 16-4.5-4.5L8 19.5"/></svg><span class="ph-label">Снимка 4 · легендата</span><span class="ph-what">Едно изречение, оцветено по легендата: подлог, глагол, спомагателен глагол (например Does she work here?). Може и снимка на такава схема от книгата.</span><span class="ph-size">2:1 · 1600 × 800</span></div>
+</figure>
+<p data-md="s8-p2" data-line="98">В изследване от 2021 г. 38 студенти гледат един и същ урок с цветно кодиране или в сиво. Цветната група се справя по-добре на теста, а натоварването, което усещат, пада наполовина. Изследването е малко и не е по английски, но посоката е ясна.</p>
+<p data-md="s8-p3" data-line="100">Условието е едно: цветът трябва да значи нещо, а не да украсява.</p>
+<p class="tip" data-md="s8-p4" data-line="102"><strong class="tip-label">Как да го приложиш</strong> избери три цвята, например за подлога, за глагола и за спомагателния глагол, и не ги сменяй. Нарисувай правилото като схема в тези цветове. На следващия ден я покрий и я нарисувай по памет.</p>
+<p data-md="s8-p5" data-line="104">Когато картата е за детето, химикалките са в неговите ръце, а ти питаш и проверяваш.</p>
+<h2 data-md="s9-h" data-line="106">Тайната е проста, работата не е</h2>
+<p data-md="s9-p1" data-line="108">Пътища, ориентири и легенда. Който „вижда“ граматиката, носи такава карта в главата си, често без да го осъзнава. Тя може да се начертае и съзнателно.</p>
+<p data-md="s9-p2" data-line="110">Само че отнема време. Легендата трябва да е една и съща за всяко правило от нивото, а връзките и примерите трябва да се намерят за всяко. Това са седмици работа, преди изобщо да стигнеш до ученето.</p>
+<p data-md="s9-p3" data-line="112">И никой не ти казва дали начертаната схема е вярна. Още по-трудно е, когато чертаеш за детето правила, които отдавна не помниш.</p>
+<p data-md="s9-p4" data-line="114">Точно тази работа свършихме с учениците си, лист по лист.</p>
+<h2 data-md="s10-h" data-line="116">Как белите листи станаха книга</h2>
+<p data-md="s10-p1" data-line="118">По-късно доразвихме системата от белите листи и я завършихме в книга, за да е достъпна за повече ученици и учители: <strong>„Английска граматика А1–А2“</strong>, по метода <strong>„Синтактична Хроматика“</strong>.</p>
+<figure class="ph" data-snimka="kniga" style="--ar: 3 / 2" aria-label="Място за снимка 5">
+<div class="ph-box"><svg class="ph-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.75"/><path d="m21 16-4.5-4.5L8 19.5"/></svg><span class="ph-label">Снимка 5 · книгата</span><span class="ph-what">Истинска снимка на книгата: корицата и книгата, разтворена на страница със схема.</span><span class="ph-size">3:2 · 1536 × 1024</span></div>
+</figure>
+<p data-md="s10-p2" data-line="120">В нея е направено всичко дотук, но за цялото ниво наведнъж:</p>
+<ul data-md="s10-l1" data-line="122"><li>всеки граматически елемент има свой цвят: съществително, глагол, време, определител;</li><li>правилото е схема или таблица, а свързаните елементи стоят заедно като форма, не като абзац;</li><li>веднага след схемата има истинско изречение, в което цветовете се разпознават;</li><li>визуалният език е един и същ през цялата книга, така че разпознаването става навик.</li></ul>
+<p data-md="s10-p3" data-line="127">Обхваща основните теми от А1 и А2: времената, частите на речта, строежа на изречението. Обясненията са прости, без академични термини, така че с нея се учи и самостоятелно, за първи път или като преговор преди контролно. И е на хартия, като белите листи.</p>
+<p data-md="s10-p4" data-line="129">Картата можеш да я начертаеш и без книга. Тук обаче тя е готова, една и съща от първата до последната страница, и е изградена в класната стая, според това кое се разбира и кое не.</p>
+<h2 data-md="s11-h" data-line="131">Какво казват хората, които я ползват</h2>
+<p data-md="s11-p1" data-line="133">Книгата се ползва дори в час. Ето няколко коментара под публикации на Lexify във Facebook, дословно:</p>
+<div class="reviews"><figure class="review" data-md="s11-q1" data-line="135"><blockquote><p>„Помагалото е страхотно. С моите ученици го използвам редовно в час.“</p></blockquote><figcaption>Д. Милева</figcaption></figure>
+<figure class="review" data-md="s11-q2" data-line="139"><blockquote><p>„Днес я получихме. Много съм доволна. Дъщеря ми е 3ти клас и определено ще ни е полезно точно такова помагало вкъщи.“</p></blockquote><figcaption>Б. Касева</figcaption></figure>
+<figure class="review" data-md="s11-q3" data-line="143"><blockquote><p>„Ползвах я дори в метрото и е много удобна за учене. Много интересно е обяснено всичко с тези формули.“</p></blockquote><figcaption>М. Костадинов</figcaption></figure>
+<figure class="review" data-md="s11-q4" data-line="147"><blockquote><p>„Доволна съм, синтезиран материал без излишен текст. Според мен полезна и за ученици.“</p></blockquote><figcaption>Г. Миткова</figcaption></figure>
+<figure class="review" data-md="s11-q5" data-line="151"><blockquote><p>„Приятел ми я препоръча и не съжалявам. Супер лесно се запомня всичко.“</p></blockquote><figcaption>И. Илков</figcaption></figure></div>
+<h2 data-md="s12-h" data-line="155">Ако искаш да я разгледаш</h2>
+<p data-md="s12-p1" data-line="157">На страницата на книгата има истински снимки отвътре. Така виждаш как изглежда една схема, преди да решиш каквото и да е.</p>
+<figure class="ph" data-snimka="stranici" style="--ar: 3 / 2" aria-label="Място за снимка 6">
+<div class="ph-box"><svg class="ph-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.75"/><path d="m21 16-4.5-4.5L8 19.5"/></svg><span class="ph-label">Снимка 6 · отвътре</span><span class="ph-what">2-3 истински вътрешни страници от книгата, като колаж или една разтворена страница.</span><span class="ph-size">3:2 · 1536 × 1024</span></div>
+</figure>
+<p data-md="s12-p2" data-line="159">Плаща се при доставка, с наложен платеж. Плащането е еднократно, без абонамент. С книгата идват и четири дигитални бонуса, които получаваш по имейл.</p>
+<p data-md="s12-p3" data-line="161">Ако книгата не ти свърши работа, имаш 60 дни да се свържеш с Lexify и да си върнеш парите.</p>
+<p class="cta" data-md="s12-p4" data-line="163"><a class="button" href="https://lexify.bg/shop/gramatika-a1a2">Виж как изглежда отвътре →</a></p>
+<p data-md="s12-p5" data-line="165">Граматиката не е списък за зубрене. Тя е карта, която може да се види.</p>
+<p class="ps" data-md="s12-p6" data-line="167"><strong>P.S.</strong> Дори да не отвориш страницата на книгата, опитай още тази вечер, за себе си или с детето: затвори записките, нарисувай по памет последното ново правило и сравни.</p>
+<p data-md="s12-p7" data-line="169">Пет минути стигат, за да се види какво наистина е научено. А ако искаш картата готова, страниците отвътре са <a href="https://lexify.bg/shop/gramatika-a1a2">тук</a>.</p>
+<h2 data-md="s13-h" data-line="171">Източници</h2>
+<details class="sources"><summary>Виж източниците (10)</summary>
+<ul data-md="s13-l1" data-line="173"><li>Ebbinghaus, H. (1885). <em>Über das Gedächtnis: Untersuchungen zur experimentellen Psychologie</em>. Leipzig: Duncker &amp; Humblot.</li><li>Murre, J. M. J., &amp; Dros, J. (2015). Replication and Analysis of Ebbinghaus' Forgetting Curve. <em>PLOS ONE, 10</em>(7), e0120644.</li><li>Paivio, A. (1971). <em>Imagery and Verbal Processes</em>. New York: Holt, Rinehart and Winston.</li><li>Novak, J. D., &amp; Gowin, D. B. (1984). <em>Learning How to Learn</em>. Cambridge University Press.</li><li>Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <em>Psychological Science, 17</em>(3), 249-255.</li><li>Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. <em>Psychological Bulletin, 132</em>(3), 354-380.</li><li>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving Students' Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology. <em>Psychological Science in the Public Interest, 14</em>(1), 4-58.</li><li>Karpicke, J. D., Butler, A. C., &amp; Roediger, H. L. (2009). Metacognitive strategies in student learning: Do students practise retrieval when they study on their own? <em>Memory, 17</em>(4), 471-479.</li><li>Alpizar, D., Adesope, O. O., &amp; Wong, R. M. (2020). A meta-analysis of signaling principle in multimedia learning environments. <em>Educational Technology Research and Development, 68</em>, 2095-2119.</li><li>Wang, X., Lin, L., Han, M., &amp; Spector, J. M. (2021). Impacts of color coding on programming learning in multimedia learning: Moving toward a multimodal methodology. <em>Frontiers in Psychology, 12</em>.</li></ul>
+</details>
+</article>
+<footer class="foot"><p>Изградено от R2 statii/taen-liyd-gramatika-a1a2.md на 13.10.2026 08:58 · 76 блока · 6 места за снимки. Текстът се редактира само в .md; този файл се прави наново с napravi.mjs.</p></footer>
+</main>
+<script type="application/json" id="md-blokove">{"изграден":"13.10.2026 08:58","блокове":[{"id":"zaglavie","line":1,"src":"# Защо на едни английската граматика „просто им идва“, а други я зубрят с години"},{"id":"s0-p1","line":7,"src":"*Статия от екипа на Lexify. В нея разказваме и за наша книга.*"},{"id":"s0-p2","line":9,"src":"**Не е талант и не е повече учене. Отговорът е известен на изследователите от десетилетия, но рядко стига до училището и до бюрото у дома.**"},{"id":"s0-p3","line":11,"src":"Най-добрите методи за учене не са тайна. Науката ги проучва от времето преди самолета. Просто малцина ги ползват."},{"id":"s0-l1","line":13,"src":"- **1880-те.** Херман Ебингхаус пръв измерва как забравяме.\n- **1971.** Алън Пайвио описва двойното кодиране: дума, свързана с образ, има два пътя за припомняне вместо един.\n- **70-те.** Джоузеф Новак започва да чертае знанията като концептуални карти: понятия, свързани със стрелки.\n- **2006.** Едно четене и три опита за припомняне дават след седмица 61% запомнено, а четири четения дават 40%. Същата година обобщение на 317 експеримента потвърждава, че повторенията, разпределени във времето, вършат повече работа от струпаните.\n- **2013.** Голям преглед на десет техники за учене дава най-високата оценка на упражняването с въпроси и на разпределянето на ученето във времето. Сред най-слабите са препрочитането и подчертаването."},{"id":"s0-p4","line":19,"src":"И все пак в проучване от 2009 г. 84% от 177 студенти посочват препрочитането като начин на учене. Едва 11% се изпитват сами. До училището и до бюрото у дома тези открития почти не стигат."},{"id":"s1-h","line":21,"src":"## Едни я виждат, други я зубрят"},{"id":"s1-p1","line":23,"src":"С английската граматика пропастта се вижда най-ясно. Затова тази статия е за нея. И не е за всеки: ако търсиш още един списък с правила за наизустяване, тук няма да го намериш."},{"id":"s1-p2","line":25,"src":"Случвало ли ти се е да забележиш нещо странно у хората, на които граматиката „просто им идва“? Има ги в училище, има ги и сред възрастните. Не знаят повече правила от другите, а изречението им излиза подредено."},{"id":"s1-p3","line":27,"src":"А някой друг знае правилото за Present Perfect наизуст и пак се запъва насред изречението. Или наизустява, че въпросът в минало време започва с *did*, а после пише „Did she went?“."},{"id":"s1-p4","line":29,"src":"Може би това си ти. Може би е детето ти, над домашното."},{"id":"s1-p5","line":31,"src":"Първите не са по-умни и обикновено не са учили повече. Те виждат нещо, което на повечето от нас никой не е показал."},{"id":"s2-h","line":33,"src":"## Това, което виждат, има име"},{"id":"s2-p1","line":35,"src":"Виждат **структурата**: не отделни правила, а как правилата са свързани."},{"id":"s2-p2","line":37,"src":"Когато структурата на материала се направи видима с цвят, рамки, стрелки и подредба, изследователите наричат това сигнализиране. Обобщение от 2020 г. събира 29 такива експеримента с общо 2726 души. Резултатът се подобрява осезаемо, и то **най-много при хората, които знаят най-малко**."},{"id":"s2-p3","line":39,"src":"Схемите не са за напредналите. Помагат най-много на онзи, който тепърва се ориентира."},{"id":"s3-h","line":41,"src":"## Защо тогава не го виждаш"},{"id":"s3-p1","line":43,"src":"Защото граматиката почти винаги стига до нас като текст. Едно правило на урок, обяснение в абзац, един-два примера, упражнение. Всяко правило поотделно е ясно, но никой не начертава как се свързват."},{"id":"s3-p2","line":45,"src":"Това не е ничия вина. Нито на този, който учи, нито на онзи до него, който се опитва да помогне. Учебникът е направен, за да обясни правилото, а учителят има четирийсет минути и цял клас."},{"id":"s3-p3","line":47,"src":"Така граматиката се учи като списък. А колкото по-дълъг е списъкът, толкова по-лесно правилата се смесват. Оттам идва и вечното бъркане на времената."},{"id":"s3-p4","line":49,"src":"В следващите минути ще видиш трите неща, които превръщат списъка в карта. Но първо една история от нашата работа с ученици."},{"id":"s4-h","line":51,"src":"## Широките бели листи"},{"id":"s4-p1","line":53,"src":"От години преподаваме английски: на деца, които тепърва учат азбуката, на тийнейджъри преди матура и на възрастни, които започват от нулата или се връщат към езика."},{"id":"s4-p2","line":55,"src":"Две изречения чуваме отново и отново: „Уча, но не разбирам.“ и „Учил съм, но нищо не помня.“"},{"id":"s4-p3","line":57,"src":"Идват с изписани тетрадки и подчертани учебници. Старанието го има."},{"id":"s4-p4","line":59,"src":"Виждахме, че им е трудно да учат от учебниците. Информацията е разпръсната, черно-бяла и без ясна система. Така е трудно да се запомни и още по-трудно да се свърже с останалото."},{"id":"s4-p5","line":61,"src":"Затова започнахме да правим собствена система. Работехме върху широки бели листи вместо в учебника, за да е материалът по-чист и ясен."},{"id":"s4-p6","line":63,"src":"С цветове отличавахме различните правила и структури. И постепенно променяхме системата според това кое е лесно и кое е трудно за учениците."},{"id":"s4-p7","line":65,"src":"Тогава видяхме нещо важно. Същото правило, обяснено с три абзаца текст, оставаше неразбрано. Показано като цветна схема, се разбираше за секунди и се помнеше седмици."},{"id":"s4-p8","line":67,"src":"Информацията на листа е същата. Разликата е, че се вижда кое с кое е свързано."},{"id":"s5-h","line":69,"src":"## Указания срещу карта"},{"id":"s5-p1","line":71,"src":"Представи си, че си в непознат град и имаш само указания: „второто наляво, после направо до аптеката“. Докато всичко върви по план, стигаш. Завиеш ли веднъж погрешно, се губиш, защото не знаеш къде се намираш."},{"id":"s5-p2","line":73,"src":"Така учим граматиката: правило след правило. Който „вижда“ граматиката, има карта. На нея има три неща, които в указанията липсват."},{"id":"s6-h","line":75,"src":"### 1. Пътищата: как се свързват правилата"},{"id":"s6-p1","line":77,"src":"Много времена са построени по един и същ начин. Всички продължителни са *be* + глагол с *-ing*: I **am** work**ing**, I **was** work**ing**, I **will be** work**ing**. Всички перфектни са *have* + третата форма на глагола: I **have** work**ed**, I **had** work**ed**."},{"id":"s6-p2","line":79,"src":"Вместо шест отделни правила, две форми, които се местят във времето."},{"id":"s6-p3","line":81,"src":"**Как да го приложиш:** преди ново правило потърси на кое старо прилича. Минало просто време? Въпросът е като в сегашното, само *do / does* става *did*."},{"id":"s7-h","line":83,"src":"### 2. Ориентирите: примерите"},{"id":"s7-p1","line":85,"src":"Едно изречение рядко показва кое е общото. Трябват няколко, и най-добре двойка, която се различава само в едно:"},{"id":"s7-l1","line":87,"src":"- I **work** from home. (по принцип)\n- I **am working** from home this week. (сега, временно)"},{"id":"s7-p2","line":90,"src":"Двете казват за разликата между сегашните времена повече, отколкото половин страница обяснение."},{"id":"s7-p3","line":92,"src":"**Как да го приложиш:** към всяко правило запиши три истински изречения, от сериал, песен или игра, и една такава двойка."},{"id":"s8-h","line":94,"src":"### 3. Легендата: цветът"},{"id":"s8-p1","line":96,"src":"Картата се чете бързо, защото има легенда: синьото е вода, зеленото е парк. Ако глаголът е винаги в един цвят, а спомагателният глагол в друг, окото само хваща кое къде е. Не търсиш правилото, разпознаваш го."},{"id":"s8-p2","line":98,"src":"В изследване от 2021 г. 38 студенти гледат един и същ урок с цветно кодиране или в сиво. Цветната група се справя по-добре на теста, а натоварването, което усещат, пада наполовина. Изследването е малко и не е по английски, но посоката е ясна."},{"id":"s8-p3","line":100,"src":"Условието е едно: цветът трябва да значи нещо, а не да украсява."},{"id":"s8-p4","line":102,"src":"**Как да го приложиш:** избери три цвята, например за подлога, за глагола и за спомагателния глагол, и не ги сменяй. Нарисувай правилото като схема в тези цветове. На следващия ден я покрий и я нарисувай по памет."},{"id":"s8-p5","line":104,"src":"Когато картата е за детето, химикалките са в неговите ръце, а ти питаш и проверяваш."},{"id":"s9-h","line":106,"src":"## Тайната е проста, работата не е"},{"id":"s9-p1","line":108,"src":"Пътища, ориентири и легенда. Който „вижда“ граматиката, носи такава карта в главата си, често без да го осъзнава. Тя може да се начертае и съзнателно."},{"id":"s9-p2","line":110,"src":"Само че отнема време. Легендата трябва да е една и съща за всяко правило от нивото, а връзките и примерите трябва да се намерят за всяко. Това са седмици работа, преди изобщо да стигнеш до ученето."},{"id":"s9-p3","line":112,"src":"И никой не ти казва дали начертаната схема е вярна. Още по-трудно е, когато чертаеш за детето правила, които отдавна не помниш."},{"id":"s9-p4","line":114,"src":"Точно тази работа свършихме с учениците си, лист по лист."},{"id":"s10-h","line":116,"src":"## Как белите листи станаха книга"},{"id":"s10-p1","line":118,"src":"По-късно доразвихме системата от белите листи и я завършихме в книга, за да е достъпна за повече ученици и учители: **„Английска граматика А1–А2“**, по метода **„Синтактична Хроматика“**."},{"id":"s10-p2","line":120,"src":"В нея е направено всичко дотук, но за цялото ниво наведнъж:"},{"id":"s10-l1","line":122,"src":"- всеки граматически елемент има свой цвят: съществително, глагол, време, определител;\n- правилото е схема или таблица, а свързаните елементи стоят заедно като форма, не като абзац;\n- веднага след схемата има истинско изречение, в което цветовете се разпознават;\n- визуалният език е един и същ през цялата книга, така че разпознаването става навик."},{"id":"s10-p3","line":127,"src":"Обхваща основните теми от А1 и А2: времената, частите на речта, строежа на изречението. Обясненията са прости, без академични термини, така че с нея се учи и самостоятелно, за първи път или като преговор преди контролно. И е на хартия, като белите листи."},{"id":"s10-p4","line":129,"src":"Картата можеш да я начертаеш и без книга. Тук обаче тя е готова, една и съща от първата до последната страница, и е изградена в класната стая, според това кое се разбира и кое не."},{"id":"s11-h","line":131,"src":"## Какво казват хората, които я ползват"},{"id":"s11-p1","line":133,"src":"Книгата се ползва дори в час. Ето няколко коментара под публикации на Lexify във Facebook, дословно:"},{"id":"s11-q1","line":135,"src":"> „Помагалото е страхотно. С моите ученици го използвам редовно в час.“\n>\n> *Д. Милева*"},{"id":"s11-q2","line":139,"src":"> „Днес я получихме. Много съм доволна. Дъщеря ми е 3ти клас и определено ще ни е полезно точно такова помагало вкъщи.“\n>\n> *Б. Касева*"},{"id":"s11-q3","line":143,"src":"> „Ползвах я дори в метрото и е много удобна за учене. Много интересно е обяснено всичко с тези формули.“\n>\n> *М. Костадинов*"},{"id":"s11-q4","line":147,"src":"> „Доволна съм, синтезиран материал без излишен текст. Според мен полезна и за ученици.“\n>\n> *Г. Миткова*"},{"id":"s11-q5","line":151,"src":"> „Приятел ми я препоръча и не съжалявам. Супер лесно се запомня всичко.“\n>\n> *И. Илков*"},{"id":"s12-h","line":155,"src":"## Ако искаш да я разгледаш"},{"id":"s12-p1","line":157,"src":"На страницата на книгата има истински снимки отвътре. Така виждаш как изглежда една схема, преди да решиш каквото и да е."},{"id":"s12-p2","line":159,"src":"Плаща се при доставка, с наложен платеж. Плащането е еднократно, без абонамент. С книгата идват и четири дигитални бонуса, които получаваш по имейл."},{"id":"s12-p3","line":161,"src":"Ако книгата не ти свърши работа, имаш 60 дни да се свържеш с Lexify и да си върнеш парите."},{"id":"s12-p4","line":163,"src":"**[Виж как изглежда отвътре →](https://lexify.bg/shop/gramatika-a1a2)**"},{"id":"s12-p5","line":165,"src":"Граматиката не е списък за зубрене. Тя е карта, която може да се види."},{"id":"s12-p6","line":167,"src":"**P.S.** Дори да не отвориш страницата на книгата, опитай още тази вечер, за себе си или с детето: затвори записките, нарисувай по памет последното ново правило и сравни."},{"id":"s12-p7","line":169,"src":"Пет минути стигат, за да се види какво наистина е научено. А ако искаш картата готова, страниците отвътре са [тук](https://lexify.bg/shop/gramatika-a1a2)."},{"id":"s13-h","line":171,"src":"## Източници"},{"id":"s13-l1","line":173,"src":"- Ebbinghaus, H. (1885). *Über das Gedächtnis: Untersuchungen zur experimentellen Psychologie*. Leipzig: Duncker & Humblot.\n- Murre, J. M. J., & Dros, J. (2015). Replication and Analysis of Ebbinghaus' Forgetting Curve. *PLOS ONE, 10*(7), e0120644.\n- Paivio, A. (1971). *Imagery and Verbal Processes*. New York: Holt, Rinehart and Winston.\n- Novak, J. D., & Gowin, D. B. (1984). *Learning How to Learn*. Cambridge University Press.\n- Roediger, H. L., & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science, 17*(3), 249-255.\n- Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin, 132*(3), 354-380.\n- Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving Students' Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology. *Psychological Science in the Public Interest, 14*(1), 4-58.\n- Karpicke, J. D., Butler, A. C., & Roediger, H. L. (2009). Metacognitive strategies in student learning: Do students practise retrieval when they study on their own? *Memory, 17*(4), 471-479.\n- Alpizar, D., Adesope, O. O., & Wong, R. M. (2020). A meta-analysis of signaling principle in multimedia learning environments. *Educational Technology Research and Development, 68*, 2095-2119.\n- Wang, X., Lin, L., Han, M., & Spector, J. M. (2021). Impacts of color coding on programming learning in multimedia learning: Moving toward a multimodal methodology. *Frontiers in Psychology, 12*."}]}</script>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById("nomera");
+  function set(on) {
+    root.classList.toggle("ids", on);
+    if (btn) { btn.setAttribute("aria-pressed", on ? "true" : "false"); btn.textContent = on ? "Скрий номерата" : "Покажи номерата"; }
+  }
+  if (location.hash === "#nomera") set(true);
+  if (btn) btn.addEventListener("click", function () { set(!root.classList.contains("ids")); });
+})();
+</script>
+</body>
+</html>
